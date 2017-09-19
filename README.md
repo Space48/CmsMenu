@@ -1,5 +1,6 @@
 # CmsMenu
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Space48/CmsMenu/badges/quality-score.png?b=master&s=2ef036b4914a67ab3a7629d4a7cd722d422fee77)](https://scrutinizer-ci.com/g/Space48/CmsMenu/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/Space48/CmsMenu/badges/build.png?b=master&s=cfd32528f9ec408b7280749154c22c49933d53d3)](https://scrutinizer-ci.com/g/Space48/CmsMenu/build-status/master)
 [![Code Coverage](https://scrutinizer-ci.com/g/Space48/CmsMenu/badges/coverage.png?b=master&s=058641925edf8931d988a11aa92003121356a4ba)](https://scrutinizer-ci.com/g/Space48/CmsMenu/?branch=master)
 
 This Magento 2 module replaces the core top navigation menu. Instead it renders the top level category and allows to assign CMS blocks to create the submenus.
