@@ -1,2 +1,41 @@
 # CmsMenu
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Space48/CmsMenu/badges/quality-score.png?b=master&s=2ef036b4914a67ab3a7629d4a7cd722d422fee77)](https://scrutinizer-ci.com/g/Space48/CmsMenu/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/Space48/CmsMenu/badges/coverage.png?b=master&s=058641925edf8931d988a11aa92003121356a4ba)](https://scrutinizer-ci.com/g/Space48/CmsMenu/?branch=master)
+
 This Magento 2 module replaces the core top navigation menu. Instead it renders the top level category and allows to assign CMS blocks to create the submenus.
+
+![prams___pushchairs___categories___inventory___products___magento_admin_at_winstanleys_pramworld](https://user-images.githubusercontent.com/1080386/30594708-e2862734-9d46-11e7-8da8-fc941eb89514.jpg)
+
+## Installation
+
+**Manually:**
+
+To install this module copy the code from this repo to `app/code/Space48/CmsMenu` folder of your Magento 2 instance, then you need to run php `bin/magento setup:upgrade`
+
+**Via composer:**
+
+From the terminal execute the following:
+
+`composer config repositories.space48-cms-menu vcs git@github.com:Space48/CmsMenu.git`
+
+then
+
+`composer require "space48/cmsmenu:{release-version}"`
+
+**Using Modman:**
+
+From the terminal execute the following:
+
+`modman clone git@github.com:Space48/CmsMenu.git`
+
+## How to use it
+
+Once installed...
+
+1. Flush Magento cache
+2. Go to the `Content -> Elements -> Blocks` and create or edit the block you want to use as a sub menu.
+3. Save changes.
+4. Go to the `Admin Penel -> Products -> Categories` and select the category you want to assign the sub menu to.
+5. Under `Content` section look for a dropdown option labelled `Menu CMS Block`.
+6. Select the block you want to use.
+7. Save changes.
