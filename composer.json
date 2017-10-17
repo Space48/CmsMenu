@@ -2,13 +2,12 @@
     "name": "space48/cmsmenu",
     "description": "Magento 2 module that replaces the core top navigation sub menus for CMS blocks.",
     "type": "magento2-module",
-    "version": "1.0.2",
     "license": [
         "proprietary"
     ],
     "require": {
         "php": "~7.0.0",
-            "magento/framework": "100.0.*|100.1.*"
+            "magento/framework": "100.0.*|100.1.*|101.*"
         },
     "repositories": {
         "magento": {
