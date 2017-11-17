@@ -13,7 +13,7 @@ namespace Space48\CmsMenu\Observer;
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 
-class AddAttributeToCategory implements ObserverInterface
+class AddAttributeToMenu implements ObserverInterface
 {
 
     /**
@@ -24,8 +24,8 @@ class AddAttributeToCategory implements ObserverInterface
      */
     public function execute(Observer $observer)
     {
-        /** @var \Magento\Catalog\Model\ResourceModel\Category\Collection $collection */
-        $collection = $observer->getEvent()->getData('category_collection');
-        $collection->addAttributeToSelect('cms_block_menu');
+        /** @var \Magento\Framework\DB\Select $select */
+        $select = $observer->getData('select');
+        $select->columns(['cms_block_menu']);
     }
 }

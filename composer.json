@@ -6,8 +6,8 @@
         "proprietary"
     ],
     "require": {
-        "php": "~7.0.0",
-            "magento/framework": "100.0.*|100.1.*|101.*"
+        "php": "~7.0|~7.1",
+            "magento/framework": "~100.0|~101.1"
         },
     "repositories": {
         "magento": {

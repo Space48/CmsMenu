@@ -16,7 +16,7 @@ use Magento\Cms\Model\BlockRepository;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
 
-class CmsTopmenu extends Template
+class TopMenu extends Template
 {
 
     /**
@@ -45,7 +45,7 @@ class CmsTopmenu extends Template
         Context $context,
         $data = []
     ) {
-        $this->categoryHelper = $categoryHelper;
+        $this->categoryHelper  = $categoryHelper;
         $this->blockRepository = $blockRepository;
         parent::__construct($context, $data);
     }
@@ -57,15 +57,18 @@ class CmsTopmenu extends Template
      * @param bool        $asCollection
      * @param bool        $toLoad
      *
-     * @return \Magento\Framework\Data\Tree\Node\Collection
+     * @return \Magento\Framework\Data\Tree\Node\Collection or
+     * \Magento\Catalog\Model\ResourceModel\Category\Collection or array
      */
     public function getStoreCategories($sorted = false, $asCollection = false, $toLoad = true)
     {
-        $collection = $this->categoryHelper->getStoreCategories($sorted, $asCollection, $toLoad);
+        $storeCategories = $this->categoryHelper->getStoreCategories($sorted, $asCollection, $toLoad);
+        if ($asCollection) {
+            $storeCategories->addAttributeToSelect('cms_block_menu');
+        }
 
-        return $collection;
+        return $storeCategories;
     }
-
 
     /**
      * @param $category Category
@@ -85,7 +88,7 @@ class CmsTopmenu extends Template
      */
     public function getCmsMenu($category)
     {
-        $block = null;
+        $block   = null;
         $blockId = $category->getData('cms_block_menu');
 
         return $blockId ? $this->blockRepository->getById($blockId)->getContent() : $block;

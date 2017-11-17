@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-/** @var \Space48\CmsMenu\Block\Html\CmsTopmenu $block */
+/** @var \Space48\CmsMenu\Block\Html\TopMenu $block */
 $categories = $block->getStoreCategories(true);
 ?>
 <div class="nav__wrapper">
@@ -17,7 +17,9 @@ $categories = $block->getStoreCategories(true);
         <ul class="clearfix">
             <?php foreach ($categories as $category) : ?>
                 <li class="nav__top-level nav__parent">
-                    <a href="<?php echo $block->getCategoryUrl($category); ?>"><?php echo $category->getData('name'); ?></a>
+                    <a href="<?php echo $block->getCategoryUrl($category); ?>">
+                        <?php echo $category->getData('name'); ?>
+                    </a>
                     <?php if ($block->getCmsMenu($category)) : ?>
                         <div class="nav__dropdown">
                             <div class="wrapper">

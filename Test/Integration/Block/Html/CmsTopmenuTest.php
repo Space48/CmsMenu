@@ -24,14 +24,14 @@ class CmsTopmenuTest extends \PHPUnit_Framework_TestCase
      */
     private $objectManager;
     /**
-     * @var CmsTopmenu
+     * @var TopMenu
      */
     private $block;
 
     public function setUp()
     {
         $this->objectManager = ObjectManager::getInstance();
-        $this->block = $this->objectManager->create(CmsTopmenu::class);
+        $this->block = $this->objectManager->create(TopMenu::class);
     }
 
     public function testGetStoreCategoriesReturnsCategoryCollection()
