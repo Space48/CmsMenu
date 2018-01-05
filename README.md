@@ -3,7 +3,7 @@
 [![Build Status](https://scrutinizer-ci.com/g/Space48/CmsMenu/badges/build.png?b=master&s=cfd32528f9ec408b7280749154c22c49933d53d3)](https://scrutinizer-ci.com/g/Space48/CmsMenu/build-status/master)
 [![Code Coverage](https://scrutinizer-ci.com/g/Space48/CmsMenu/badges/coverage.png?b=master&s=058641925edf8931d988a11aa92003121356a4ba)](https://scrutinizer-ci.com/g/Space48/CmsMenu/?branch=master)
 
-This Magento 2 module replaces the core top navigation menu. Instead it renders the top level category and allows to assign CMS blocks to create the submenus.
+This Magento 2 module replaces the core top navigation menu. Instead it renders the top level category and allows you to assign CMS block already created to create the submenus.
 
 ![prams___pushchairs___categories___inventory___products___magento_admin_at_winstanleys_pramworld](https://user-images.githubusercontent.com/1080386/30594708-e2862734-9d46-11e7-8da8-fc941eb89514.jpg)
 
@@ -33,10 +33,13 @@ From the terminal execute the following:
 
 Once installed...
 
-1. Flush Magento cache
-2. Go to the `Content -> Elements -> Blocks` and create or edit the block you want to use as a sub menu.
-3. Save changes.
-4. Go to the `Admin Penel -> Products -> Categories` and select the category you want to assign the sub menu to.
-5. Under `Content` section look for a dropdown option labelled `Menu CMS Block`.
-6. Select the block you want to use.
-7. Save changes.
+1. Go to the `Content -> Elements -> Blocks` and create or edit the block you want to use as a sub menu.
+2. Save changes.
+3. Go to the `Admin Penel -> Products -> Categories` and select the category you want to assign the sub menu to.
+4. Under `Content` section look for a dropdown option labelled `Menu CMS Block`.
+5. Select the block you want to use.
+6. Save changes.
+7. Flush Magento cache.
+
+## Troubleshooting
+If you have done the previous steps and still cannot see the sub menus, try reindexing the flat tables related to categories.
