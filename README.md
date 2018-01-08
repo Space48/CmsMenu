@@ -25,11 +25,11 @@ From the terminal execute the following commands:
 3. `bin/magento setup:upgrade`
 4. `bin/magento indexer:reindex`
 
-**Using Modman:**
+**Using Modman (Good for development):**
 
 From the terminal execute the following:
 
-1. `modman init`
+1. `modman init` (in case modman directory is not already there)
 2. `modman clone git@github.com:Space48/CmsMenu.git`
 3. `bin/magento setup:upgrade`
 4. `bin/magento indexer:reindex`
