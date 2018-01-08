@@ -11,7 +11,8 @@ This Magento 2 module replaces the core top navigation menu. Instead it renders 
 
 **Manually:**
 
-To install this module copy the code from this repo to `app/code/Space48/CmsMenu` folder in your Magento 2 instance, then you need to run:
+To install this module copy the code from this repo to `app/code/Space48/CmsMenu` folder in your Magento 2 instance, then you need to run the following commands from the terminal:
+
 1. `bin/magento setup:upgrade`
 2. `bin/magento indexer:reindex`
 
