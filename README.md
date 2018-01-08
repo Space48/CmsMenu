@@ -11,23 +11,27 @@ This Magento 2 module replaces the core top navigation menu. Instead it renders 
 
 **Manually:**
 
-To install this module copy the code from this repo to `app/code/Space48/CmsMenu` folder of your Magento 2 instance, then you need to run php `bin/magento setup:upgrade`
+To install this module copy the code from this repo to `app/code/Space48/CmsMenu` folder in your Magento 2 instance, then you need to run:
+1. `bin/magento setup:upgrade`
+2. `bin/magento indexer:reindex`
 
 **Via composer:**
 
-From the terminal execute the following:
+From the terminal execute the following commands:
 
-`composer config repositories.space48-cms-menu vcs git@github.com:Space48/CmsMenu.git`
-
-then
-
-`composer require "space48/cmsmenu:{release-version}"`
+1. `composer config repositories.space48-cms-menu vcs git@github.com:Space48/CmsMenu.git`
+2. `composer require "space48/cmsmenu:{release-version}"`
+3. `bin/magento setup:upgrade`
+4. `bin/magento indexer:reindex`
 
 **Using Modman:**
 
 From the terminal execute the following:
 
-`modman clone git@github.com:Space48/CmsMenu.git`
+1. `modman init`
+2. `modman clone git@github.com:Space48/CmsMenu.git`
+3. `bin/magento setup:upgrade`
+4. `bin/magento indexer:reindex`
 
 ## How to use it
 
@@ -42,4 +46,4 @@ Once installed...
 7. Flush Magento cache.
 
 ## Troubleshooting
-If you have done the previous steps and still cannot see the sub menus, try reindexing the flat tables related to categories.
+If you have done the previous steps and still cannot see the sub menus or you get an error message saying that `cms_block_menu` column is missing, try reindexing the flat tables related to categories.
