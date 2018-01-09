@@ -21,7 +21,7 @@ To install this module copy the code from this repository to `app/code/Space48/C
 From the terminal execute the following commands:
 
 1. `composer config repositories.space48-cms-menu vcs git@github.com:Space48/CmsMenu.git`
-2. `composer require "space48/cmsmenu"` to install the latest version or `"space48/SeoTitles:{module-version}"` to install a specific version.
+2. `composer require "space48/cmsmenu"` to install the latest version or `"space48/SeoTitles:{module-version}"` to install a specific [version](https://github.com/Space48/CmsMenu/releases).
 3. `bin/magento setup:upgrade`
 4. `bin/magento indexer:reindex`
 
