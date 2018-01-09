@@ -3,33 +3,33 @@
 [![Build Status](https://scrutinizer-ci.com/g/Space48/CmsMenu/badges/build.png?b=master&s=cfd32528f9ec408b7280749154c22c49933d53d3)](https://scrutinizer-ci.com/g/Space48/CmsMenu/build-status/master)
 [![Code Coverage](https://scrutinizer-ci.com/g/Space48/CmsMenu/badges/coverage.png?b=master&s=058641925edf8931d988a11aa92003121356a4ba)](https://scrutinizer-ci.com/g/Space48/CmsMenu/?branch=master)
 
-This Magento 2 module replaces the core top navigation menu. Instead it renders the top level category and allows you to assign CMS block already created to create the submenus.
+This Magento 2 module replaces the core top navigation menu. Instead, it renders the top level category only and allows you to assign a CMS Block already created to replace the submenus.
 
 ![prams___pushchairs___categories___inventory___products___magento_admin_at_winstanleys_pramworld](https://user-images.githubusercontent.com/1080386/30594708-e2862734-9d46-11e7-8da8-fc941eb89514.jpg)
 
 ## Installation
 
-**Manually:**
+### Manually 
 
-To install this module copy the code from this repo to `app/code/Space48/CmsMenu` folder in your Magento 2 instance, then you need to run the following commands from the terminal:
+To install this module copy the code from this repository to `app/code/Space48/CmsMenu` folder in your Magento 2 instance, then you need to run the following commands from the terminal:
 
 1. `bin/magento setup:upgrade`
 2. `bin/magento indexer:reindex`
 
-**Via composer:**
+### Using Composer
 
 From the terminal execute the following commands:
 
 1. `composer config repositories.space48-cms-menu vcs git@github.com:Space48/CmsMenu.git`
-2. `composer require "space48/cmsmenu:{release-version}"`
+2. `composer require "space48/cmsmenu"` to install the latest version or `"space48/SeoTitles:{module-version}"` to install a specific version.
 3. `bin/magento setup:upgrade`
 4. `bin/magento indexer:reindex`
 
-**Using Modman (Good for development):**
+### Using Modman (Good for development)
 
 From the terminal execute the following:
 
-1. `modman init` (in case modman directory is not already there)
+1. `modman init` (in case Modman already initialized there)
 2. `modman clone git@github.com:Space48/CmsMenu.git`
 3. `bin/magento setup:upgrade`
 4. `bin/magento indexer:reindex`
