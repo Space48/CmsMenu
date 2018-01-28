@@ -1,9 +1,12 @@
 <?php
 /**
- * AddAttributeToCategory
+ * Space48_CmsMenu
  *
- * @copyright Copyright © 2017 Space48. All rights reserved.
- * @author    raul@space48.com
+ * @category    Space48
+ * @package     Space48_CmsMenu
+ * @Date        09/2017
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      @diazwatson
  */
 
 declare(strict_types=1);
@@ -17,10 +20,12 @@ class AddAttributeToMenu implements ObserverInterface
 {
 
     /**
+     * Add attribute to flat table collection
+     * vendor/magento/module-catalog/Model/ResourceModel/Category/Flat.php:300
+     *
      * @param Observer $observer
      *
      * @return void
-     * @throws \Magento\Framework\Exception\LocalizedException
      */
     public function execute(Observer $observer)
     {

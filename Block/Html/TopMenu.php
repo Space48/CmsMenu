@@ -1,9 +1,12 @@
 <?php
 /**
- * Topmenu
+ * Space48_CmsMenu
  *
- * @copyright Copyright © 2017 Space48. All rights reserved.
- * @author    raul@space48.com
+ * @category    Space48
+ * @package     Space48_CmsMenu
+ * @Date        09/2017
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      @diazwatson
  */
 
 declare(strict_types=1);
@@ -13,6 +16,9 @@ namespace Space48\CmsMenu\Block\Html;
 use Magento\Catalog\Helper\Category as HelperCategory;
 use Magento\Catalog\Model\Category;
 use Magento\Cms\Model\BlockRepository;
+use Magento\Framework\Data\Tree\Node\Collection as NodeCollection;
+use Magento\Catalog\Model\ResourceModel\Category\Collection as CategoryCollection;
+use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
 
@@ -44,8 +50,9 @@ class TopMenu extends Template
         BlockRepository $blockRepository,
         Context $context,
         $data = []
-    ) {
-        $this->categoryHelper  = $categoryHelper;
+    )
+    {
+        $this->categoryHelper = $categoryHelper;
         $this->blockRepository = $blockRepository;
         parent::__construct($context, $data);
     }
@@ -57,8 +64,7 @@ class TopMenu extends Template
      * @param bool        $asCollection
      * @param bool        $toLoad
      *
-     * @return \Magento\Framework\Data\Tree\Node\Collection or
-     * \Magento\Catalog\Model\ResourceModel\Category\Collection or array
+     * @return NodeCollection|CategoryCollection|array
      */
     public function getStoreCategories($sorted = false, $asCollection = false, $toLoad = true)
     {
@@ -84,11 +90,11 @@ class TopMenu extends Template
      * @param $category Category
      *
      * @return string | null
-     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     * @throws NoSuchEntityException
      */
     public function getCmsMenu($category)
     {
-        $block   = null;
+        $block = null;
         $blockId = $category->getData('cms_block_menu');
 
         return $blockId ? $this->blockRepository->getById($blockId)->getContent() : $block;

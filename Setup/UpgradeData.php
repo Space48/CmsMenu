@@ -1,9 +1,12 @@
 <?php
 /**
- * UpgradeData
+ * Space48_CmsMenu
  *
- * @copyright Copyright © 2017 Space48. All rights reserved.
- * @author    raul@space48.com
+ * @category    Space48
+ * @package     Space48_CmsMenu
+ * @Date        09/2017
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      @diazwatson
  */
 
 declare(strict_types=1);
@@ -45,14 +48,29 @@ class UpgradeData implements UpgradeDataInterface
     public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
         if (version_compare($context->getVersion(), '1.0.1', '<')) {
+            /** @var \Magento\Eav\Setup\EavSetup $eavSetup */
             $eavSetup = $this->eavSetupFactory->create(['setup' => $setup]);
 
             $eavSetup->updateAttribute(
                 Category::ENTITY,
                 'cms_block_menu',
                 [
-                    'is_visible_on_front'     => 1,
-                    'used_in_product_listing' => 1
+                    'is_visible_on_front'     => true,
+                    'used_in_product_listing' => true
+                ]);
+        }
+        if (version_compare($context->getVersion(), '1.0.2', '<')) {
+            /** @var \Magento\Eav\Setup\EavSetup $eavSetup */
+            $eavSetup = $this->eavSetupFactory->create(['setup' => $setup]);
+
+            $eavSetup->updateAttribute(
+                Category::ENTITY,
+                'cms_block_menu',
+                [
+                    'used_in_product_listing' => false,
+                    'visible_on_front'        => false,
+                    'is_used_in_grid'         => false,
+                    'is_filterable_in_grid'   => false,
                 ]);
         }
     }

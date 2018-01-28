@@ -8,7 +8,7 @@
                     <item name="sortOrder" xsi:type="number">65</item>
                     <item name="dataType" xsi:type="string">string</item>
                     <item name="formElement" xsi:type="string">select</item>
-                    <item name="label" xsi:type="string" translate="true">Menu CMS Block</item>
+                    <item name="label" xsi:type="string" translate="true">Sub Menu CMS Block</item>
                     <item name="scopeLabel" xsi:type="string">[STORE VIEW]</item>
                 </item>
             </argument>

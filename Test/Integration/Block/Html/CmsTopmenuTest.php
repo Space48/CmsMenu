@@ -1,7 +1,9 @@
 <?php
 /**
- * CmsTopmenuTest.php
+ * Space48_CmsMenu
  *
+ * @category    Space48
+ * @package     Space48_CmsMenu
  * @Date        09/2017
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  * @author      @diazwatson
@@ -15,8 +17,9 @@ use Magento\Catalog\Model\Category;
 use Magento\Cms\Model\Block;
 use Magento\Framework\Data\Tree\Node\Collection;
 use Magento\TestFramework\ObjectManager;
+use PHPUnit\Framework\TestCase;
 
-class CmsTopmenuTest extends \PHPUnit_Framework_TestCase
+class CmsTopmenuTest extends TestCase
 {
 
     /**
