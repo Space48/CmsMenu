@@ -22,9 +22,9 @@ $itemCount = 0;
                 <a href="<?php echo $block->getCategoryUrl($category); ?>" class="level-top ui-corner-all">
                     <?php echo $category->getData('name'); ?>
                 </a>
-                <?php if ($block->getCmsMenu($category)) : ?>
+                <?php if ($cmsMenu = $block->getCmsMenu($category)) : ?>
                     <ul class="level0 submenu ui-menu ui-widget ui-widget-content ui-corner-all">
-                        <?php echo $block->getCmsMenu($category); ?>
+                        <?php echo $cmsMenu; ?>
                     </ul>
                 <?php endif; ?>
             </li>
