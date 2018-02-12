@@ -94,9 +94,8 @@ class TopMenu extends Template
      */
     public function getCmsMenu($category)
     {
-        $block = null;
         $blockId = $category->getData('cms_block_menu');
 
-        return $blockId ? $this->blockRepository->getById($blockId)->getContent() : $block;
+        return $blockId ? $this->blockRepository->getById($blockId)->getContent() : null;
     }
 }
