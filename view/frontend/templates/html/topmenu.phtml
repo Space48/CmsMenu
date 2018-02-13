@@ -16,7 +16,7 @@ $categories = $block->getStoreCategories(true);
 $itemCount = 0;
 ?>
 <nav class="navigation">
-    <ul class="ui-menu ui-widget ui-widget-content ui-corner-all">
+    <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
         <?php foreach ($categories as $category) : ?>
             <li class="level0 nav-<?= $itemCount++ ?> first level-top ui-menu-item">
                 <a href="<?php echo $block->getCategoryUrl($category); ?>" class="level-top ui-corner-all">
@@ -31,12 +31,3 @@ $itemCount = 0;
         <?php endforeach; ?>
     </ul>
 </nav>
-<script type="text/x-magento-init">
-    {
-        ".nav__wrapper": {
-            "navigation": {}
-        }
-    }
-
-
-</script>
