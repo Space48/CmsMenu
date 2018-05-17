@@ -101,4 +101,14 @@ class TopMenu extends Template
         }
         return ($block && $block->getData('is_active')) ? $block->getContent() : null;
     }
+    
+    /**
+     * @param $string
+     *
+     * @return string
+     */
+    public function removeUlTags($string)
+    {
+        return str_replace(["<ul>","</ul>"], "", $string);
+    }
 }
