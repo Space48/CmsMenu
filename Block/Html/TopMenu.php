@@ -16,6 +16,7 @@ namespace Space48\CmsMenu\Block\Html;
 use Magento\Catalog\Helper\Category as HelperCategory;
 use Magento\Catalog\Model\Category;
 use Magento\Cms\Model\BlockRepository;
+use Magento\Cms\Model\Template\FilterProvider;
 use Magento\Framework\Data\Tree\Node\Collection as NodeCollection;
 use Magento\Catalog\Model\ResourceModel\Category\Collection as CategoryCollection;
 use Magento\Framework\Exception\NoSuchEntityException;
@@ -36,10 +37,16 @@ class TopMenu extends Template
     private $blockRepository;
 
     /**
+     * @var \Magento\Cms\Model\Template\FilterProvider
+     */
+    protected $filterProvider;
+
+    /**
      * Topmenu constructor.
      *
      * @param HelperCategory|Category $categoryHelper
      * @param BlockRepository         $blockRepository
+     * @param FilterProvider         $filterProvider
      * @param Context                 $context
      * @param array                   $data
      *
@@ -48,12 +55,14 @@ class TopMenu extends Template
     public function __construct(
         HelperCategory $categoryHelper,
         BlockRepository $blockRepository,
+        FilterProvider $filterProvider,
         Context $context,
         $data = []
     )
     {
         $this->categoryHelper = $categoryHelper;
         $this->blockRepository = $blockRepository;
+        $this->filterProvider = $filterProvider;
         parent::__construct($context, $data);
     }
 
@@ -96,9 +105,14 @@ class TopMenu extends Template
     {
         $block = null;
         $blockId = $category->getData('cms_block_menu');
+        $storeId = $this->_storeManager->getStore()->getId();
         if ($blockId) {
             $block = $this->blockRepository->getById($blockId);
         }
-        return ($block && $block->getData('is_active')) ? $block->getContent() : null;
+        return ($block && $block->getData('is_active'))
+            ? $this->filterProvider->getBlockFilter()
+                ->setStoreId($storeId)
+                ->filter($block->getContent())
+            : null;
     }
 }
