@@ -65,6 +65,18 @@ class TopMenu extends Template
         $this->filterProvider = $filterProvider;
         parent::__construct($context, $data);
     }
+    
+    protected function getCacheTags()
+    {
+        return \array_merge(
+            parent::getCacheTags(),
+            $this->getStoreCategories()->walk(
+                function ($category) {
+                    return \Magento\Catalog\Model\Category::CACHE_TAG . '_' . $category->getId();
+                }
+            )
+        );
+    }
 
     /**
      * Retrieve current store categories
