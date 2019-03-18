@@ -18,13 +18,13 @@ $itemCount = 0;
 <nav class="navigation">
     <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
         <?php foreach ($categories as $category) : ?>
-            <li class="level0 nav-<?= $itemCount++ ?> first level-top ui-menu-item">
-                <a href="<?php echo $block->getCategoryUrl($category); ?>" class="level-top ui-corner-all">
-                    <?php echo $category->getData('name'); ?>
+            <li class="level0 nav-<?= $block->escapeHtml($itemCount++) ?> first level-top ui-menu-item">
+                <a href="<?php echo $block->escapeUrl($block->getCategoryUrl($category)); ?>" class="level-top ui-corner-all">
+                    <?php echo $block->escapeHtml($category->getData('name')); ?>
                 </a>
                 <?php if ($cmsMenu = $block->getCmsMenu($category)) : ?>
                     <ul class="level0 submenu ui-menu ui-widget ui-widget-content ui-corner-all">
-                        <?php echo $cmsMenu; ?>
+                        <?php echo $block->escapeHtml($cmsMenu); ?>
                     </ul>
                 <?php endif; ?>
             </li>
