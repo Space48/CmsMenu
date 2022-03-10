@@ -7,7 +7,7 @@
     ],
     "require": {
         "php": "~7.0|~7.1",
-        "magento/framework": "101.0.*|^102.0.0"
+        "magento/framework": "101.0.*|^102.0.0|^103.0"
         },
     "repositories": {
         "magento": {
